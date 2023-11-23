@@ -1,24 +1,25 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+// eslint-disable-next-line @typescript-eslint/no-redeclare
+import React, { useState } from "react";
+
+import NavBar from "./components/NavBar";
+import LoginComponent from "./components/LoginComponent";
+import PersonasCardContainer from "./components/PersonasCardContainer";
+import "./styling/App.css";
 
 function App() {
+  const [loggedIn, setLoggedIn] = useState(false);
+  const [username, setUsername] = useState("");
+
+  const handleLogin = (enteredUserName: string) => {
+    setLoggedIn(true);
+    setUsername(enteredUserName);
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {!loggedIn && <LoginComponent onLogin={handleLogin} />}
+      {loggedIn && <NavBar username={username} />}
+      <PersonasCardContainer></PersonasCardContainer>
     </div>
   );
 }
