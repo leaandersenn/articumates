@@ -1,16 +1,20 @@
-import React, { useState } from "react";
-import "../styling/NavBar.css";
+import React from "react";
+import Image from 'next/image';
+import "./Header.css";
 
-interface NavBarProps {
-  username: string;
-}
+import Logo from '../../../../public/images/logo.jpg'; 
 
-export default function NavBar(props: NavBarProps) {
-  const [username, setUsername] = useState(props.username);
-
+const Header = () => {
   return (
-    <div className="navbar">
-      <h1>Articumate</h1>
-    </div>
+    <header className="flex justify-center p-4">
+      <Image
+          src={Logo} 
+          height={544} 
+          width={544} 
+          alt="logo"
+        />
+    </header>
   );
-}
+};
+
+export default Header;
