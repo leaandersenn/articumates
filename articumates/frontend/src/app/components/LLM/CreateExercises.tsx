@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import { makeRequest } from "./openai.mjs";
 
-const RequestFromLLM = () => {
+export const CreateExercises = () => {
   const [response, setResponse] = useState("");
   const [prompt, setPrompt] = useState("");
 
@@ -47,5 +47,3 @@ const RequestFromLLM = () => {
     </div>
   );
 };
-
-export default RequestFromLLM;
