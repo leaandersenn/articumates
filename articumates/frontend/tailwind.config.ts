@@ -8,7 +8,7 @@ const config: Config = {
     './app/**/*.{js,ts,jsx,tsx,mdx}',
     './node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}'
   ],
-  darkMode: 'class',
+  modernMode: 'class',
   theme: {
     container: {
       center: true,
@@ -20,7 +20,7 @@ const config: Config = {
     }
   },
   plugins: [
-    nextui({
+    nextui({ 
       themes: {
         light: {
           layout: {},
@@ -28,16 +28,22 @@ const config: Config = {
         },
         dark: {
           layout: {}, 
-          colors: {} 
+          colors: {
+            primary: {
+              50: '#8794B2',
+              900: '#FEECFE',
+              DEFAULT: '#ffff',
+            },
+          }
+ 
         },
-        modern: {
-          extend: 'dark', 
+        modern: { 
           colors: {
             background: '#0D001A',
-            foreground: '#ffffff',
+            foreground: '#c031e2',
             primary: {
-              50: '#3B096C',
-              100: '#520F83',
+              50: '#8794B2',
+              100: '#8794B2',
               200: '#7318A2',
               300: '#9823C2',
               400: '#c031e2',
@@ -46,8 +52,8 @@ const config: Config = {
               700: '#FCADF9',
               800: '#FDD5F9',
               900: '#FEECFE',
-              DEFAULT: '#DD62ED',
-              foreground: '#ffffff'
+              DEFAULT: '#FFFFFF',
+              foreground: '#DD62ED'
             },
             focus: '#F182F6'
           },
