@@ -1,0 +1,40 @@
+.card {
+    width: 100%;
+    height: 120px;
+    max-width: 950px;
+    margin: 0px 10px 40px 10px;
+}
+
+.userCard {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: #8794B2;
+    align-items: center;
+}
+
+.userComponent {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    align-items: center;
+}
+.userPicture {
+    background-color: #FF4FD8;
+
+}
+
+.userInfo {
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+    color: #FFFFFF;
+}
+
+.viewDetails {
+    color:#B0BFE1
+}
+
+#name {
+    font-weight: bold;
+}
