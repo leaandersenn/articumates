@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   Card,
   CardBody,
@@ -7,15 +7,27 @@ import {
 } from '@nextui-org/react';
 import './UserProfile.css';
 
-export default function UserProfile() {
+interface Impairment {
+  description: string,
+  skillLevel: number,
+}
+
+interface User {
+  goals?: string[],
+  impairment?: Impairment[],
+  name: string,
+  age: number,
+}
+
+const UserProfile = (user: User) => {
   return (
     <Card className="card">
       <CardBody className="userCard">
         <div className="userComponent">
           <Avatar radius="full" size="lg" className="userPicture" />
           <div className="userInfo">
-            <p id="name">Amundsen Jonas</p>
-            <p>8 years old</p>
+            <p id="name">{user.name}</p>
+            <p>{user.age} years old</p>
           </div>
         </div>
         <Button className="viewDetails" radius="md" variant="light">
@@ -25,5 +37,7 @@ export default function UserProfile() {
     </Card>
   );
 }
+
+export default UserProfile;
 
 
