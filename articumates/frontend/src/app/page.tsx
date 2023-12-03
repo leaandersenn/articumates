@@ -1,9 +1,14 @@
 import React from "react";
 import UserProfile from "./components/UserProfile/UserProfile";
-
+import { CreateExercises } from "./components/LLM/CreateExercises";
 
 export default function Home() {
   return (
-    <h1>Login Page here</h1>
+    <div>
+      <div>
+        <CreateExercises></CreateExercises>
+      </div>
+      <h1>Login Page here</h1>;
+    </div>
   );
 }
