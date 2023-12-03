@@ -8,10 +8,12 @@ const Header = () => {
   return (
     <header className="flex justify-center p-4">
       <Image
+          priority
           src={Logo} 
           height={544} 
           width={544} 
           alt="logo"
+          className="logo"
         />
     </header>
   );
