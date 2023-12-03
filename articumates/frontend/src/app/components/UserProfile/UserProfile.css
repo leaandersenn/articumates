@@ -19,9 +19,9 @@
     gap: 20px;
     align-items: center;
 }
-.userPicture {
-    background-color: #FF4FD8;
-
+  
+.userPicture{
+    background-color: #FF4FD8; 
 }
 
 .userInfo {
