@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import { makeRequest } from "./openai.mjs";
+import { fetchPromptHistory } from "./ReadEarlierPrompts";
 
 export const CreateExercises = () => {
   const [response, setResponse] = useState("");
@@ -33,7 +34,7 @@ export const CreateExercises = () => {
           onChange={(e) => setPrompt(e.target.value)}
         />
       </div>
-      <button onClick={handleClick}>Get AI Response</button>
+      <button onClick={fetchPromptHistory}>Get AI Response</button>
       <div>
         <label>AI Response:</label>
         <textarea
