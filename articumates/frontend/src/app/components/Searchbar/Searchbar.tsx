@@ -1,6 +1,6 @@
 'use client'
 
-import React, { ChangeEvent, useState } from 'react';
+import React, { ChangeEvent } from 'react';
 import './Searchbar.css';
 import { Input } from '@nextui-org/react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
