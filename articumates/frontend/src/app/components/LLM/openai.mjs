@@ -5,7 +5,25 @@ const openai = new OpenAI({
   dangerouslyAllowBrowser: true,
 });
 
-let history = [];
+let history = [
+  {
+    role: "user",
+    content: "Hello, how are you?",
+  },
+  {
+    role: "assistant",
+    content: "I'm doing well, thank you! How can I assist you today?",
+  },
+  {
+    role: "user",
+    content: "I need help with a programming question.",
+  },
+  {
+    role: "assistant",
+    content:
+      "Sure, I'd be happy to help. What specifically do you need assistance with?",
+  },
+];
 
 export async function makeRequest(prompt) {
   let promptWithHistory = prompt;
@@ -37,8 +55,6 @@ export async function makeRequest(prompt) {
     presence_penalty: 0,
   });
 
-  //console.log(response.choices[0]);
-
   // Assuming the response contains new dialogue, add it to history
   history.push({
     role: "assistant",
@@ -48,7 +64,3 @@ export async function makeRequest(prompt) {
   console.log(history);
   return response.choices[0].message.content;
 }
-
-// Example usage
-
-//makeRequest("tell me a very short joke");

@@ -1,11 +1,10 @@
-'use client'
+"use client";
 
 import { initializeApp } from "firebase/app";
 import { getAnalytics, isSupported } from "firebase/analytics";
 import { getAuth } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
 import { getStorage } from "firebase/storage";
-
 
 const firebaseConfig = {
   apiKey: "AIzaSyBQC81GRg2GRhXyNYJJQz5pEkTiuwWpiTk",
@@ -14,7 +13,7 @@ const firebaseConfig = {
   storageBucket: "articumate.appspot.com",
   messagingSenderId: "621584820464",
   appId: "1:621584820464:web:513959260b66fbdc56ba35",
-  measurementId: "G-QNGGFZLKYV"
+  measurementId: "G-QNGGFZLKYV",
 };
 
 const app = initializeApp(firebaseConfig);
