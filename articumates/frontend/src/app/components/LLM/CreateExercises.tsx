@@ -3,7 +3,6 @@
 import React, { useState } from "react";
 import { makeRequest } from "./openai.mjs";
 import { fetchPromptHistory } from "./FetchPromptHistory";
-import { PushPromptToDB } from "./PushPromptToDB";
 
 export const CreateExercises = () => {
   const [response, setResponse] = useState("");
@@ -17,7 +16,6 @@ export const CreateExercises = () => {
 
       setResponse(response[response.length - 1].content);
       const lastTwoResponses = response.slice(-2);
-      PushPromptToDB(1, lastTwoResponses);
     } catch (error) {
       console.error("Error:", error);
       setResponse("Error fetching response");
