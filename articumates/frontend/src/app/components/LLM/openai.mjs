@@ -5,27 +5,8 @@ const openai = new OpenAI({
   dangerouslyAllowBrowser: true,
 });
 
-let history = [
-  {
-    role: "user",
-    content: "Hello, how are you?",
-  },
-  {
-    role: "assistant",
-    content: "I'm doing well, thank you! How can I assist you today?",
-  },
-  {
-    role: "user",
-    content: "I need help with a programming question.",
-  },
-  {
-    role: "assistant",
-    content:
-      "Sure, I'd be happy to help. What specifically do you need assistance with?",
-  },
-];
-
-export async function makeRequest(prompt) {
+export async function makeRequest(earlierPrompts, prompt) {
+  let history = earlierPrompts;
   let promptWithHistory = prompt;
 
   // Combine prompt with history
@@ -62,5 +43,5 @@ export async function makeRequest(prompt) {
   });
 
   console.log(history);
-  return response.choices[0].message.content;
+  return history;
 }
