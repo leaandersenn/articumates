@@ -30,7 +30,7 @@ export async function makeRequest(earlierPrompts, prompt) {
       },
     ],
     temperature: 1,
-    max_tokens: 200,
+    max_tokens: 1000,
     top_p: 1,
     frequency_penalty: 0,
     presence_penalty: 0,
@@ -38,7 +38,7 @@ export async function makeRequest(earlierPrompts, prompt) {
 
   // Assuming the response contains new dialogue, add it to history
   history.push({
-    role: "assistant",
+    role: "system",
     content: response.choices[0].message.content,
   });
 
