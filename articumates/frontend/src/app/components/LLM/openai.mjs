@@ -5,9 +5,8 @@ const openai = new OpenAI({
   dangerouslyAllowBrowser: true,
 });
 
-let history = [];
-
-export async function makeRequest(prompt) {
+export async function makeRequest(earlierPrompts, prompt) {
+  let history = earlierPrompts;
   let promptWithHistory = prompt;
 
   // Combine prompt with history
@@ -31,24 +30,18 @@ export async function makeRequest(prompt) {
       },
     ],
     temperature: 1,
-    max_tokens: 200,
+    max_tokens: 1000,
     top_p: 1,
     frequency_penalty: 0,
     presence_penalty: 0,
   });
 
-  //console.log(response.choices[0]);
-
   // Assuming the response contains new dialogue, add it to history
   history.push({
-    role: "assistant",
+    role: "system",
     content: response.choices[0].message.content,
   });
 
   console.log(history);
-  return response.choices[0].message.content;
+  return history;
 }
-
-// Example usage
-
-//makeRequest("tell me a very short joke");
