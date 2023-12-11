@@ -1,0 +1,24 @@
+.profileCard {
+    background-color: rgba(255, 255, 255, 0.27);
+    width: 100%;
+    height: 100%;
+    max-width: 1000px;
+    max-height: 1500px;
+    margin-bottom: 30px;
+}
+
+.profile-button {
+    background-color:#59ADEA;
+    margin: 0px 100px 30px 100px;
+    font-size: medium;
+}
+
+.session-button {
+    background-color:#59ADEA;
+    width: 100%;
+    max-width: 1000px;
+    height: 50px;
+    margin: 50px 0 20px 0;
+    border-radius: 15px;
+    font-size: large;
+}

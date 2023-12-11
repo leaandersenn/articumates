@@ -1,43 +1,36 @@
-import React, { useEffect, useState } from 'react';
-import {
-  Card,
-  CardBody,
-  Avatar,
-  Button,
-} from '@nextui-org/react';
+import React from 'react';
+import { useRouter } from 'next/navigation';
+import { User } from '@/app/utils/TypeDef';
+import { Card, CardBody, Avatar, Button } from '@nextui-org/react';
 import './UserProfile.css';
 
-interface Impairment {
-  description: string,
-  skillLevel: number,
-}
+const UserProfile = ({id, name, age}: User) => {
+  const router = useRouter();
 
-interface User {
-  goals?: string[],
-  impairment?: Impairment[],
-  name: string,
-  age: number,
-}
+  const viewDetails = () => {
+    if (router) {
+      router.push(`/users/${id}`);
+    } else {
+      console.log("Error with router");
+    }
+  };
 
-const UserProfile = (user: User) => {
   return (
     <Card className="card">
       <CardBody className="userCard">
         <div className="userComponent">
           <Avatar radius="full" size="lg" className="userPicture" />
           <div className="userInfo">
-            <p id="name">{user.name}</p>
-            <p>{user.age} years old</p>
+            <p id="name">{name}</p>
+            <p>{age} years old</p>
           </div>
         </div>
-        <Button className="viewDetails" radius="md" variant="light">
-          View Details
+        <Button className="viewDetails" radius="md" variant="light" onClick={viewDetails}>
+          View Profile
         </Button>
       </CardBody>
     </Card>
   );
-}
+};
 
 export default UserProfile;
-
-
