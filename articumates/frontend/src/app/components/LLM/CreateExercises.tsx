@@ -3,11 +3,7 @@
 import React, { useState } from "react";
 import { makeRequest } from "./openai.mjs";
 import { fetchPromptHistory } from "./FetchPromptHistory";
-<<<<<<< HEAD
 import { modifyPrompts } from "./Prompts/modifyPromptsWithUserData";
-=======
-import { modifyPrompt } from "./Prompts/modifyPromptsWithUserData";
->>>>>>> origin
 // import { rawData } from "./Prompts/modifyPromptsWithUserData";
 
 interface PromptProps {
