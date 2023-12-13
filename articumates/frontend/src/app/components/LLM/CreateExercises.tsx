@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import { makeRequest } from "./openai.mjs";
 import { fetchPromptHistory } from "./FetchPromptHistory";
-import { modifyPrompt } from "./Prompts/modifyPromptsWithUserData";
+import { modifyPrompts } from "./Prompts/modifyPromptsWithUserData";
 // import { rawData } from "./Prompts/modifyPromptsWithUserData";
 
 interface PromptProps {
@@ -20,26 +20,28 @@ const FocusWords = ["r", "s"];
 
 export const CreateExercises = () => {
   const [response, setResponse] = useState("");
-  const [prompt, setPrompt] = useState("");
+  //const [prompt, setPrompt] = useState("");
 
   const handleClick = async () => {
     try {
-      const data = await modifyPrompt({
+      const prompts: String[] = modifyPrompts({
         ChildInfoGender,
         ChildInfoAge,
         ChildInfoSkills,
         FocusWords,
       });
-      setPrompt(data);
+
       let promptHistory = await fetchPromptHistory({ userID: 1 });
 
-      console.log("Test: " + data);
+      const responses: String[] = [];
+      for (const prompt of prompts) {
+        console.log("This is the prompt: " + prompt);
+        const response = await makeRequest(promptHistory, prompt);
+        responses.push(response[response.length - 1].content);
+        // Process each response here if needed
+      }
 
-      console.log("This is the prompt sent to the API: " + prompt);
-
-      const response = await makeRequest(promptHistory, prompt);
-      setResponse(await response);
-      setResponse(response[response.length - 1].content);
+      // setResponse(response[response.length - 1].content);
       // const lastTwoResponses = response.slice(-2);
     } catch (error) {
       console.error("Error:", error);

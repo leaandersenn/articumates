@@ -3,13 +3,12 @@
     "childInfo": {
       "gender": "",
       "age": 0,
-      "skills": {
-      }
+      "skills": []
+      
     },
     "exercise": {
       "duration": 20,
-      "focusWords": {
-      },
+      "focusWords": [],
       "description": "I want you to create an text the child can read a text out loud to the therapist. The text should be exiting to read. Make it longer than what you expect when it comes to time use. The exercise should contain the whole script for me, the speech therapist. I should not have to think of anything during the exercise. Your response should be on this form, in the exact order mentioned here: - Guide to the therapist where you explain the exercise that he/she is going to perform with the child - Title of the story (exercise duration) - Full text of the story that the child is going to read out loud"
     }
   }
