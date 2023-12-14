@@ -1,0 +1,22 @@
+.cardExercise {
+   width: 100%;
+   background-color: #1F366F;
+   padding: 20px;
+}
+
+.cardStyling {
+    width: 750px;
+}
+
+.exerciseHeader {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+
+.exerciseCardBody {
+    font-style: italic;
+    font-weight: 300;
+}
