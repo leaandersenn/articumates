@@ -6,7 +6,8 @@ const openai = new OpenAI({
 });
 
 export async function makeRequest(earlierPrompts, prompt) {
-  let history = earlierPrompts;
+  let history = [];
+  // let history = earlierPrompts;
   let promptWithHistory = prompt;
 
   // Combine prompt with history

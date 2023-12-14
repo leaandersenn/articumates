@@ -56,12 +56,20 @@ function createPrompt(
   );
 }
 
-export function modifyPrompts(props: PromptProps) {
-  const prompts = [];
+export async function modifyPrompts(props: PromptProps) {
+  const prompts: string[] = [];
 
   prompts.push(createPrompt(storyTellingData, props));
   prompts.push(createPrompt(recognitionOfWordsData, props));
   prompts.push(createPrompt(wordMimingData, props));
+  // console.log(
+  //   "prompt1: " +
+  //     prompts[0] +
+  //     "prompt2: " +
+  //     prompts[1] +
+  //     "prompt3: " +
+  //     prompts[2]
+  // );
 
   return prompts;
 }
