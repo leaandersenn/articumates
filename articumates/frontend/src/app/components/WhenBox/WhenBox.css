@@ -1,0 +1,31 @@
+.whenboxCard {
+    display: flex;
+    flex-direction: column;
+    background-color: #1F366F;
+    width: 400px;
+    height: 150px;
+    margin: 0px 10px 0px 10px;
+    padding: 20px;
+    font-weight: 600;
+}
+.inputBox {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 10px;
+    align-items: center;
+}
+
+.dateBox {
+    background-color: #FFFFFF;
+    color: #000000;
+    border-radius: 10px;
+    padding: 5px
+}
+
+.title {
+    margin-right: 10px;
+}
+
+#date {
+    margin-bottom: 20px;
+}
