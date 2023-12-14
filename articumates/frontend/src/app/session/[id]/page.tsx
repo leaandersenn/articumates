@@ -22,7 +22,7 @@ export default function Session() {
     }
 
     const onHandleGenerate = () => {
-      /* TODO: Push to the sessionexercises page */
+      router.push(`/session/${userID}/create`);
     }
 
 
