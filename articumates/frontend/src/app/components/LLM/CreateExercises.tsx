@@ -13,17 +13,12 @@ interface PromptProps {
   FocusWords: String[];
 }
 
-// const ChildInfoGender = "boy";
-// const ChildInfoAge = 8;
-// const ChildInfoSkills = ["'r' sound: 3/5", "'s' sound: 4/5"];
-// const FocusWords = ["r", "s"];
+const ChildInfoGender = "boy";
+const ChildInfoAge = 8;
+const ChildInfoSkills = ["'r' sound: 3/5", "'s' sound: 4/5"];
+const FocusWords = ["r", "s"];
 
-export async function CreateExercises({
-  ChildInfoGender,
-  ChildInfoAge,
-  ChildInfoSkills,
-  FocusWords,
-}: PromptProps): Promise<String[]> {
+export async function CreateExercises(props: PromptProps): Promise<string[]> {
   const [promptResponses, setPromptResponses] = useState([""]);
   //const [prompt, setPrompt] = useState("");
   const [response, setResponse] = useState("");
