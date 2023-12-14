@@ -1,0 +1,53 @@
+
+.skill-level {
+   color: #FFFFFF; 
+}
+  
+.skill-level.selected {
+   color: #ffc107; 
+}
+
+
+.exercises {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+    padding: 20px;
+    border-radius: 15px;
+    background-color: rgba(255, 255, 255, 0.27);
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.05);
+  }
+  
+  .impairmentRow {
+    display: grid;
+    grid-template-columns: auto 1fr auto auto;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .impairmentDescription {
+    white-space: nowrap; 
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  .skillLevel {
+    display: flex;
+    justify-content: flex-start;
+    gap: 15px;
+    min-width: 120px; 
+    margin-right: 100px;
+  }
+  
+  .select {
+    width: 400px;
+    text-align: start;
+    border-radius: 10px;
+    background-color: #FFFFFF;
+    color: #000000;
+    padding: 10px;
+    border: none;
+  }
+
+  
