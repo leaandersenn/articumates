@@ -7,24 +7,29 @@ import { modifyPrompts } from "./Prompts/modifyPromptsWithUserData";
 // import { rawData } from "./Prompts/modifyPromptsWithUserData";
 
 interface PromptProps {
-  ChildInfoGender: string;
+  ChildInfoGender: String;
   ChildInfoAge: number;
   ChildInfoSkills: String[];
   FocusWords: String[];
 }
 
-const ChildInfoGender = "boy";
-const ChildInfoAge = 8;
-const ChildInfoSkills = ["'r' sound: 3/5", "'s' sound: 4/5"];
-const FocusWords = ["r", "s"];
+// const ChildInfoGender = "boy";
+// const ChildInfoAge = 8;
+// const ChildInfoSkills = ["'r' sound: 3/5", "'s' sound: 4/5"];
+// const FocusWords = ["r", "s"];
 
-export async function CreateExercises(): Promise<string[]> {
+export async function CreateExercises({
+  ChildInfoGender,
+  ChildInfoAge,
+  ChildInfoSkills,
+  FocusWords,
+}: PromptProps): Promise<String[]> {
   const [promptResponses, setPromptResponses] = useState([""]);
   //const [prompt, setPrompt] = useState("");
   const [response, setResponse] = useState("");
 
   try {
-    const prompts: string[] = await modifyPrompts({
+    const prompts: String[] = await modifyPrompts({
       ChildInfoGender,
       ChildInfoAge,
       ChildInfoSkills,
