@@ -31,33 +31,25 @@ export const CreateExercises = () => {
         FocusWords,
       });
 
-      // console.log(
-      //   "prompt1: " +
-      //     prompts[0] +
-      //     "prompt2: " +
-      //     prompts[1] +
-      //     "prompt3: " +
-      //     prompts[2]
-      // );
-
       let promptHistory = await fetchPromptHistory({ userID: 1 });
 
       // const responses: String[] = [];
 
       const prompt1 = await makeRequest(promptHistory, prompts[0]);
       console.log("prompt1 : ", prompt1);
+      console.log(prompt1[prompt1.length - 1].content);
 
       promptHistory = prompt1[prompt1.length - 1].content;
 
       const prompt2 = await makeRequest(promptHistory, prompts[1]);
+      console.log(prompt2[prompt2.length - 1].content);
+
+      promptHistory = prompt2[prompt2.length - 1].content;
+
+      const prompt3 = await makeRequest(promptHistory, prompts[2]);
+      console.log(prompt3[prompt3.length - 1].content);
       console.log("prompt2 : ", prompt2);
-      // console.log("prompt2 : ", prompt1[prompt2.length - 1].content);
 
-      // const prompt3 = await makeRequest(promptHistory, prompts[2]);
-
-      // console.log("prompt1 : ", prompt1[prompt1.length - 1].content);
-      // console.log("prompt2 : ", prompt1[prompt2.length - 1].content);
-      // console.log("prompt3 : ", prompt1[prompt3.length - 1].content);
       // for (const prompt of prompts) {
       //   console.log("This is the prompt: " + prompt);
       //   const response = await makeRequest(promptHistory, prompt);
