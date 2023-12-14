@@ -3,24 +3,24 @@ import storyTellingData from "./StoryTelling.json"; // Replace with your actual 
 import recognitionOfWordsData from "./RecognitionOfWords.json"; // Replace with your actual file name
 
 interface JsonData {
-  backgroundInfo: string;
+  backgroundInfo: String;
   childInfo: {
-    gender: string;
+    gender: String;
     age: number;
-    skills: string[];
+    skills: String[];
   };
   exercise: {
     duration: number;
-    focusWords: string[];
-    description: string;
+    focusWords: String[];
+    description: String;
   };
 }
 
 interface PromptProps {
-  ChildInfoGender: string;
+  ChildInfoGender: String;
   ChildInfoAge: number;
-  ChildInfoSkills: string[];
-  FocusWords: string[];
+  ChildInfoSkills: String[];
+  FocusWords: String[];
 }
 
 function createPrompt(
@@ -57,7 +57,7 @@ function createPrompt(
 }
 
 export async function modifyPrompts(props: PromptProps) {
-  const prompts: string[] = [];
+  const prompts: String[] = [];
 
   prompts.push(createPrompt(storyTellingData, props));
   prompts.push(createPrompt(recognitionOfWordsData, props));
