@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import { makeRequest } from "./openai.mjs";
 import { fetchPromptHistory } from "./FetchPromptHistory";
-import { modifyPrompt } from "./Prompts/modifyPromptsWithUserData";
+import { modifyPrompts } from "./Prompts/modifyPromptsWithUserData";
 // import { rawData } from "./Prompts/modifyPromptsWithUserData";
 
 interface PromptProps {
@@ -20,26 +20,45 @@ const FocusWords = ["r", "s"];
 
 export const CreateExercises = () => {
   const [response, setResponse] = useState("");
-  const [prompt, setPrompt] = useState("");
+  //const [prompt, setPrompt] = useState("");
 
   const handleClick = async () => {
     try {
-      const data = await modifyPrompt({
+      const prompts: string[] = await modifyPrompts({
         ChildInfoGender,
         ChildInfoAge,
         ChildInfoSkills,
         FocusWords,
       });
-      setPrompt(data);
+
       let promptHistory = await fetchPromptHistory({ userID: 1 });
 
-      console.log("Test: " + data);
+      // const responses: String[] = [];
 
-      console.log("This is the prompt sent to the API: " + prompt);
+      const prompt1 = await makeRequest(promptHistory, prompts[0]);
+      console.log("prompt1 : ", prompt1);
+      console.log(prompt1[prompt1.length - 1].content);
 
-      const response = await makeRequest(promptHistory, prompt);
-      setResponse(await response);
-      setResponse(response[response.length - 1].content);
+      promptHistory = prompt1[prompt1.length - 1].content;
+
+      const prompt2 = await makeRequest(promptHistory, prompts[1]);
+      console.log(prompt2[prompt2.length - 1].content);
+
+      promptHistory = prompt2[prompt2.length - 1].content;
+
+      const prompt3 = await makeRequest(promptHistory, prompts[2]);
+      console.log(prompt3[prompt3.length - 1].content);
+      console.log("prompt2 : ", prompt2);
+
+      // for (const prompt of prompts) {
+      //   console.log("This is the prompt: " + prompt);
+      //   const response = await makeRequest(promptHistory, prompt);
+      //   console.log(response[response.length - 1].content);
+      //   responses.push(response[response.length - 1].content);
+      //   // Process each response here if needed
+      // }
+
+      // setResponse(response[response.length - 1].content);
       // const lastTwoResponses = response.slice(-2);
     } catch (error) {
       console.error("Error:", error);
