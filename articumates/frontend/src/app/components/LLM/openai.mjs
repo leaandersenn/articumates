@@ -1,13 +1,12 @@
 import OpenAI from "openai";
 
 const openai = new OpenAI({
-  apiKey: process.env.NEXT_PUBLIC_OPENAI_API_KEY,
+  apiKey: "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",
   dangerouslyAllowBrowser: true,
 });
 
 export async function makeRequest(earlierPrompts, prompt) {
   let history = [];
-  // let history = earlierPrompts;
   let promptWithHistory = prompt;
 
   // Combine prompt with history
