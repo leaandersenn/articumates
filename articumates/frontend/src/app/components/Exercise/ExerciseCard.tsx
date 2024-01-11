@@ -28,9 +28,9 @@ export default function ExerciseCard({exercise, number}: any) {
                 <p>{exerciseType[number]}</p>
                 <FontAwesomeIcon icon={faUpRightAndDownLeftFromCenter} />
             </CardHeader>
-            <CardBody className="exerciseCardBody">
+            <CardBody className="exerciseCardText">
                 <p>{exercise.title}</p>
-                <p className="estimated">Estimated Time: 20 minutes</p>
+                <p className="estimatedTime">Estimated Time: 20 minutes</p>
             </CardBody>
         </Card>
         

@@ -17,7 +17,7 @@
     
 }
 
-.exerciseCardBody {
+.exerciseCardText {
     font-weight: 300;
     gap: 10px;
 }
@@ -27,6 +27,6 @@
     font-weight: 500;
 }
 
-.estimated {
+.estimatedTime {
     font-style: italic;
 }
