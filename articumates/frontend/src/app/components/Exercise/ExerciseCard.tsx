@@ -13,7 +13,7 @@ export default function ExerciseCard({exercise, number}: any) {
     const onOpen = () => setIsOpen(true);
     const onClose = () => setIsOpen(false);
 
-    const exerciseType = ["Word repetition", "Mime game", "Storytelling"];
+    const exerciseType = ["WORD REPETITION", "MIME GAME", "STORYTELLING"];
     
     return(
 
@@ -26,11 +26,11 @@ export default function ExerciseCard({exercise, number}: any) {
         >
             <CardHeader className="exerciseHeader">
                 <p>{exerciseType[number]}</p>
-                <p>{exercise.title}</p>
                 <FontAwesomeIcon icon={faUpRightAndDownLeftFromCenter} />
             </CardHeader>
             <CardBody className="exerciseCardBody">
-                Estimated Time: 20 minutes
+                <p>{exercise.title}</p>
+                <p className="estimated">Estimated Time: 20 minutes</p>
             </CardBody>
         </Card>
         
