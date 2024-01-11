@@ -4,12 +4,16 @@ import Goals from "@/app/components/Goals/Goals";
 import { Button, Card, CardBody, Spinner } from "@nextui-org/react";
 import { useParams, useRouter } from 'next/navigation';
 import './user.css';
-import { Suspense } from "react";
+import { Suspense, useEffect } from "react";
 import ProfileInfo from "@/app/components/ProfileInfo/ProfileInfo";
 import Impairments from "@/app/components/Impairments/Impairments";
+import { useDispatch } from "react-redux";
+import { updateId } from "@/app/_redux/userProfileSlice";
 
 
 export default function Users() {
+
+    const dispatch = useDispatch();
     const params = useParams();
     const userID = params.id;
     const router = useRouter();
@@ -18,6 +22,12 @@ export default function Users() {
     if (!userID) {
         return <div><Spinner color="default"/></div>;
     }
+
+    useEffect(() => {
+      if (userID) {
+          dispatch(updateId(Number(userID)));
+      }
+  }, [userID, dispatch]);
 
     const navigateToSession = () => {
       router.push(`/session/${userID}`);
