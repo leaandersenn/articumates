@@ -21,7 +21,7 @@ interface ExerciseModalProps {
 export default function ExerciseModal(props: ExerciseModalProps) {
   
   const onHandleRegenerate = () => {
-    console.log("Regenerate");
+    //console.log("Regenerate");
   }
 
   return (

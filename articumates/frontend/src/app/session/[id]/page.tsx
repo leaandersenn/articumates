@@ -1,3 +1,4 @@
+
 'use client'
 
 import ImpairmentSelector from "@/app/components/ImpairmentSelector/ImpairmentSelector";
@@ -8,6 +9,7 @@ import { Button, Card, CardBody, CardHeader } from "@nextui-org/react";
 import { useParams, useRouter } from "next/navigation";
 import { Fragment } from "react";
 import './session.css'
+import { CreateExercises } from "@/app/components/LLM/CreateExercises";
 
 
 
@@ -16,6 +18,10 @@ export default function Session() {
     const params = useParams();
     const userID = params.id; 
     const router = useRouter();
+
+    const onHandleCreateExercise = () => {
+      const test = CreateExercises();
+    }
 
     const onHandleCancel = () => {
       router.push(`/users/${userID}`);
@@ -48,6 +54,7 @@ export default function Session() {
             <ImpairmentSelector />
             <div className="flex flex-row gap-y-4">
               <Button className="cancelButton" onClick={onHandleCancel}>Cancel</Button>
+              <Button className="cancelButton" onClick={onHandleCreateExercise}>CreateExercise</Button>
               <Button className="generateButton"onClick={onHandleGenerate}>Generate Exercises</Button>
             </div>
           </CardBody>
