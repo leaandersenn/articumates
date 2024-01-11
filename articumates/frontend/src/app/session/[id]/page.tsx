@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 import ImpairmentSelector from "@/app/components/ImpairmentSelector/ImpairmentSelector";
 import Impairments from "@/app/components/Impairments/Impairments";
@@ -7,19 +7,20 @@ import WhenBox from "@/app/components/WhenBox/page";
 import { Button, Card, CardBody, CardHeader } from "@nextui-org/react";
 import { useParams, useRouter } from "next/navigation";
 import { Fragment } from "react";
-import './session.css'
-
-
+import "./session.css";
 
 export default function Session() {
+  const params = useParams();
+  const userID = params.id;
+  const router = useRouter();
 
-    const params = useParams();
-    const userID = params.id; 
-    const router = useRouter();
+  const onHandleCancel = () => {
+    router.push(`/users/${userID}`);
+  };
 
-    const onHandleCancel = () => {
-      router.push(`/users/${userID}`);
-    }
+  const onHandleGenerate = () => {
+    /* TODO: Push to the sessionexercises page */
+  };
 
     const onHandleGenerate = () => {
       router.push(`/session/${userID}/create`);
