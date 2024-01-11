@@ -13,7 +13,7 @@ export default function WhenBox() {
                 <p className="title">Time:</p>
                 <input type="time" className="dateBox"></input>
             </div>
-            <p>Duration: 1 hour</p>
+            <p className="duration">Duration: 1 hour</p>
         </Card>
     );
 }

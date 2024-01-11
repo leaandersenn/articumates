@@ -20,7 +20,6 @@ interface SearchbarProps {
         className="searchClient"
         startContent={<FontAwesomeIcon icon={faSearch} />}
         value={value}
-        onChange={onChange}
       />
     );
   };

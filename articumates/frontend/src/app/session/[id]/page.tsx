@@ -42,7 +42,7 @@ export default function Session() {
 
             <div className="textGroup">
               <p className="impairment">Impairment</p>
-              <p className="skillLevel">SkillLevel</p>
+              <p className="skill">SkillLevel</p>
               <p className="focus">Focus</p>
             </div>
             <ImpairmentSelector />

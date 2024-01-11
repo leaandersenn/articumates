@@ -1,15 +1,14 @@
 {
-    "backgroundInfo": "When you answer to this prompt, I want you to provide the exercise, and the exercise only. This is background info: I am a licensed speech therapist for children. My focus is in-person sessions for children aged 8-12 years. Your task is to provide me with exercises to perform with a child. Here are some info of the child I want you to create exercises for today:",
-    "childInfo": {
-      "gender": "",
-      "age": 0,
-      "skills": {
-      }
-    },
-    "exercise": {
-      "duration": 20,
-      "focusWords": {
-      },
-      "description": "I want you to create an text the child can read a text out loud to the therapist. The text should be exiting to read. Make it longer than what you expect when it comes to time use. The exercise should contain the whole script for me, the speech therapist. I should not have to think of anything during the exercise. Your response should be on this form, in the exact order mentioned here: - Guide to the therapist where you explain the exercise that he/she is going to perform with the child - Title of the story (exercise duration) - Full text of the story that the child is going to read out loud"
-    }
+  "backgroundInfo": "When you answer to this prompt, I want you to provide the exercise, and the exercise only. This is background info: I am a licensed speech therapist for children. My focus is in-person sessions for children aged 8-12 years. Your task is to provide me with exercises to perform with a child. Here are some info of the child I want you to create exercises for today:",
+  "childInfo": {
+    "gender": "",
+    "age": 0,
+    "skills": []
+    
+  },
+  "exercise": {
+    "duration": 20,
+    "focusWords": [],
+    "description": "I want you to create an text the child can read a text out loud to the therapist. The text should be exiting to read. Make it longer than what you expect when it comes to time use. The exercise should contain the whole script for me, the speech therapist. I should not have to think of anything during the exercise. Your response should be on this form, in the exact order mentioned here: - Guide to the therapist where you explain the exercise that he/she is going to perform with the child - Title of the story (exercise duration) - Full text of the story that the child is going to read out loud"
   }
+}
