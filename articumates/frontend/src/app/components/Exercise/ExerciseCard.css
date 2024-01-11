@@ -13,15 +13,20 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    font-weight: 500;
     
 }
 
-.exerciseCardBody {
-    font-style: italic;
+.exerciseCardText {
     font-weight: 300;
+    gap: 10px;
 }
 
 .exerciseTitle {
     font-size: 16px;
     font-weight: 500;
+}
+
+.estimatedTime {
+    font-style: italic;
 }

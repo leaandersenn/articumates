@@ -7,12 +7,13 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUpRightAndDownLeftFromCenter } from '@fortawesome/free-solid-svg-icons';
 
 
-export default function ExerciseCard({exercise}: any) {
+export default function ExerciseCard({exercise, number}: any) {
     
     const [isOpen, setIsOpen] = useState<boolean>(false);
     const onOpen = () => setIsOpen(true);
     const onClose = () => setIsOpen(false);
-    
+
+    const exerciseType = ["WORD REPETITION", "MIME GAME", "STORYTELLING"];
     
     return(
 
@@ -24,11 +25,12 @@ export default function ExerciseCard({exercise}: any) {
             onPress={onOpen} 
         >
             <CardHeader className="exerciseHeader">
-                <p>{exercise.title}</p>
+                <p>{exerciseType[number]}</p>
                 <FontAwesomeIcon icon={faUpRightAndDownLeftFromCenter} />
             </CardHeader>
-            <CardBody className="exerciseCardBody">
-                Estimated Time: 20 minutes
+            <CardBody className="exerciseCardText">
+                <p>{exercise.title}</p>
+                <p className="estimatedTime">Estimated Time: 20 minutes</p>
             </CardBody>
         </Card>
         
