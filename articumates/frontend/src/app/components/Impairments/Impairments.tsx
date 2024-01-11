@@ -21,7 +21,7 @@ export default async function Impairments({ userID }: UserProps) {
         if(!querySnapshot.empty) {
             const userDoc = querySnapshot.docs[0];
             const userData = userDoc.data();
-            console.log(JSON.stringify(userData) + " userdata");
+            // console.log(JSON.stringify(userData) + " userdata");
 
             return (
                 <div className="impairments-container">
@@ -47,7 +47,7 @@ export default async function Impairments({ userID }: UserProps) {
                 </div>
                 );
         } else {
-            console.log("No user with the given ID found")
+            // console.log("No user with the given ID found")
         }
 
     } catch (error) {

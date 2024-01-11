@@ -1,30 +1,17 @@
-"use client";
-
-import React, { useState } from "react";
+// CreateExercises.js
 import { makeRequest } from "./openai.mjs";
 import { fetchPromptHistory } from "./FetchPromptHistory";
 import { modifyPrompts } from "./Prompts/modifyPromptsWithUserData";
-// import { rawData } from "./Prompts/modifyPromptsWithUserData";
-
-interface PromptProps {
-  ChildInfoGender: String;
-  ChildInfoAge: number;
-  ChildInfoSkills: String[];
-  FocusWords: String[];
-}
+import { update } from "firebase/database";
 
 const ChildInfoGender = "boy";
 const ChildInfoAge = 8;
 const ChildInfoSkills = ["'r' sound: 3/5", "'s' sound: 4/5"];
 const FocusWords = ["r", "s"];
 
-export async function CreateExercises(): Promise<string[]> {
-  const [promptResponses, setPromptResponses] = useState([""]);
-  //const [prompt, setPrompt] = useState("");
-  const [response, setResponse] = useState("");
-
+export async function CreateExercises() {
   try {
-    const prompts: String[] = await modifyPrompts({
+    const prompts = await modifyPrompts({
       ChildInfoGender,
       ChildInfoAge,
       ChildInfoSkills,
@@ -32,23 +19,28 @@ export async function CreateExercises(): Promise<string[]> {
     });
 
     let promptHistory = await fetchPromptHistory({ userID: 1 });
-    let newResponses: string[] = [];
+    let newResponses = [];
 
     for (const prompt of prompts) {
-      const response = await makeRequest(promptHistory, prompt);
-      const newString = response[response.length - 1].content;
-      newResponses.push(newString);
-      promptHistory = response[response.length - 1].content;
-    }
+      // Append the new user prompt to the history
+      //promptHistory.push({ role: "user", content: prompt });
 
-    setPromptResponses(newResponses);
+      // Get the updated history from the LLM
+      const updatedHistory = await makeRequest(promptHistory, prompt);
+      console.log("updatedHistory = :" + JSON.stringify(updatedHistory));
+
+      // Extract the latest response from the LLM
+      const newString = updatedHistory[updatedHistory.length - 1].content;
+      newResponses.push(newString);
+
+      // Update the prompt history with the full conversation history
+      promptHistory = updatedHistory;
+  }
+  console.log(JSON.stringify(promptHistory));
+
+    return newResponses;
   } catch (error) {
     console.error("Error:", error);
-    setResponse("Error fetching response");
+    throw error; // Re-throw the error to be handled by the caller
   }
-
-
-  console.log(" Dette er abkjsdjkbabsjd" + promptResponses); 
-  console.log("HEISANN" + JSON.stringify(promptResponses))
-  return promptResponses;
 }

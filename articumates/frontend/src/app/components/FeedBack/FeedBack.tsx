@@ -20,28 +20,28 @@ export default function FeedBack() {
     const [selectedExercise, setSelectedExercise] = useState("");
 
     useEffect(() => {
-        console.log("selectedPerformance" + selectedPerformance);
-        console.log("selectedExercise" + selectedExercise);
+        // console.log("selectedPerformance" + selectedPerformance);
+        // console.log("selectedExercise" + selectedExercise);
     }, [selectedPerformance, selectedExercise]);
     
     const onHandlePerformanceThumbsUp = () => {
         setSelectedPerformance("thumbsup");
-        console.log("selectedPerformance" + selectedPerformance);
+        // console.log("selectedPerformance" + selectedPerformance);
     }
 
     const onHandlePerformanceThumbsDown = () => {
         setSelectedPerformance("thumbdown");
-        console.log("selectedPerformance" + selectedPerformance);
+        // console.log("selectedPerformance" + selectedPerformance);
     }
 
     const onHandleExerciseSmile = () => {
         setSelectedExercise("smile");
-        console.log("selectedExercise" + selectedExercise);
+        // console.log("selectedExercise" + selectedExercise);
     }
 
     const onHandleExerciseSad = () => {
         setSelectedExercise("sad");
-        console.log("selectedExercise" + selectedExercise);
+        // console.log("selectedExercise" + selectedExercise);
     }
 
     return (

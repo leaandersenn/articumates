@@ -1,8 +1,9 @@
-import wordMimingData from "./WordMiming.json";
-import storyTellingData from "./StoryTelling.json"; // Replace with your actual file name
-import recognitionOfWordsData from "./RecognitionOfWords.json"; // Replace with your actual file name
+import wordMimingData from "./WordMiming.json"; 
+import storyTellingData from "./StoryTelling.json"; 
+import recognitionOfWordsData from "./RecognitionOfWords.json"; 
 
-interface JsonData {
+//Interface for the different LLM prompts, stored in seperate JSON files
+interface JSONData {
   backgroundInfo: String;
   childInfo: {
     gender: String;
@@ -16,6 +17,8 @@ interface JsonData {
   };
 }
 
+
+//Information about the child
 interface PromptProps {
   ChildInfoGender: String;
   ChildInfoAge: number;
@@ -23,8 +26,10 @@ interface PromptProps {
   FocusWords: String[];
 }
 
+
+//Function for combining the child info with the prompts
 function createPrompt(
-  jsonData: JsonData,
+  jsonData: JSONData,
   { ChildInfoGender, ChildInfoAge, ChildInfoSkills, FocusWords }: PromptProps
 ) {
   jsonData.childInfo.gender = ChildInfoGender;
@@ -59,9 +64,9 @@ function createPrompt(
 export async function modifyPrompts(props: PromptProps) {
   const prompts: String[] = [];
 
-  prompts.push(createPrompt(storyTellingData, props));
   prompts.push(createPrompt(recognitionOfWordsData, props));
   prompts.push(createPrompt(wordMimingData, props));
+  prompts.push("What was the last question I asked? Answer with max 15 words");
   // console.log(
   //   "prompt1: " +
   //     prompts[0] +
