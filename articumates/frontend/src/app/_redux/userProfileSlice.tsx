@@ -16,15 +16,11 @@ type UserProfileState = {
 //Initial state
 const initialState: UserProfileState = {
   id: 1,
-  name: 'Thea Halvorsen',
+  name: '',
   age: 8,
   goals: [
   ],
-  impairments: [
-    { description: 'Lisp ("s", "z")', skillLevel: 2 },
-    { description: 'Stutter', skillLevel: 3 },
-    { description: 'Other sounds ("r", "l", "th"...)', skillLevel: 1 }
-  ],
+  impairments: [],
   chosenImpairments: [],
 
   exercises: [

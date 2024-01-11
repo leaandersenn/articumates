@@ -37,7 +37,7 @@ export default function Users() {
       <Suspense fallback={<div>Loading...</div>}>
         <div className="flex flex-col items-center">
           <Button className="session-button" onClick={navigateToSession}>Create a new session</Button>
-          <Card className="profileCard">
+          <Card className="profileCardStart">
             <CardBody>
               <ProfileInfo userID={Number(userID)} />
               <Goals userID={Number(userID)} />
