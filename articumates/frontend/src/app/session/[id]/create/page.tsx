@@ -39,7 +39,7 @@ export default function Create() {
       <CardBody className="createBody">
         <Card className="exerciseCard">
           {exercises.map((exercise, index) => (
-            <ExerciseCard key={index} exercise={exercise} />
+            <ExerciseCard key={index} exercise={exercise} number={index} />
           ))}
         </Card>
         <Button className="addNotesButton" onClick={onHandleNotes}>Add Notes</Button>

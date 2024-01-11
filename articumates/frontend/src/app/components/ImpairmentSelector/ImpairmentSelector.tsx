@@ -1,6 +1,6 @@
 'use client';
 
-import React, { Fragment } from 'react';
+import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { RootState } from '../../_redux/store';
 import { Impairment, ChosenImpairment } from '@/app/types';
@@ -9,7 +9,7 @@ import {
   removeChosenImpairment,
   updateChosenImpairmentFocus,
 } from '../../_redux/userProfileSlice';
-import { Card, CardBody, Checkbox } from '@nextui-org/react';
+import { Checkbox } from '@nextui-org/react';
 import '../ImpairmentSelector/ImpairmentSelector.css'
 
 const ImpairmentSelector: React.FC = () => {

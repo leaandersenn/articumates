@@ -6,9 +6,15 @@ import './sessionStart.css';
 import ExerciseFull from '../components/Exercise/ExerciseFull';
 import { useSelector } from 'react-redux';
 import { RootState } from '../_redux/store'; 
-import { Exercise } from '../types';
+import { Exercise } from '../types';;
+import { useRouter } from 'next/navigation';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
+
 
 const SessionStart = () => {
+    const router = useRouter();
+    
     const exercises = useSelector((state: RootState) => state.userProfile.exercises);
 
     const [currentExerciseIndex, setCurrentExerciseIndex] = useState(0);
@@ -30,16 +36,20 @@ const SessionStart = () => {
         });
     };
 
+    const goBack = () => {
+        router.back();
+    }
+
     return (
+    <><Button isIconOnly className="goBackToPrior" onClick={goBack}> <FontAwesomeIcon icon={faArrowLeft} className="arrowLeft" /></Button>
         <div className="sessionStart">
-            <ExerciseFull 
-                exercise={exercises[currentExerciseIndex]} 
-            />
+            <ExerciseFull
+                exercise={exercises[currentExerciseIndex]} />
             <div className="navigationButtons">
                 <Button className="goBack" onClick={goBackCard}>Go Back</Button>
                 <Button className="goToNext" onClick={goToNextCard}>Next</Button>
             </div>
-        </div>
+        </div></>
     );
 };
 

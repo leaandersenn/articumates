@@ -31,3 +31,13 @@
     width: 300px;
     margin-right: 20px;
 }
+
+
+.goBackToPrior {
+    background-color: #1F366F;
+    margin-left: 60px;
+}
+
+.arrowLeft {
+    font-size: 44px;
+}
