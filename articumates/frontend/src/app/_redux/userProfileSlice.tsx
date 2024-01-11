@@ -19,9 +19,6 @@ const initialState: UserProfileState = {
   name: 'Thea Halvorsen',
   age: 8,
   goals: [
-    'Reduce lisp',
-    'Eradicate stutter',
-    'Improve overall pronunciation of other sounds'
   ],
   impairments: [
     { description: 'Lisp ("s", "z")', skillLevel: 2 },
