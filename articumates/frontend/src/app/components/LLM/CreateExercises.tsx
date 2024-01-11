@@ -18,7 +18,7 @@ const ChildInfoAge = 8;
 const ChildInfoSkills = ["'r' sound: 3/5", "'s' sound: 4/5"];
 const FocusWords = ["r", "s"];
 
-export async function CreateExercises(): Promise<string[]> {
+export async function CreateExercises(props: PromptProps): Promise<string[]> {
   const [promptResponses, setPromptResponses] = useState([""]);
   //const [prompt, setPrompt] = useState("");
   const [response, setResponse] = useState("");
@@ -47,8 +47,5 @@ export async function CreateExercises(): Promise<string[]> {
     setResponse("Error fetching response");
   }
 
-
-  console.log(" Dette er abkjsdjkbabsjd" + promptResponses); 
-  console.log("HEISANN" + JSON.stringify(promptResponses))
   return promptResponses;
 }

@@ -1,13 +1,13 @@
 {
-  "backgroundInfo": "When you answer to this prompt, I want you to provide the exercise, and the exercise only. This is background info: I am a licensed speech therapist for children. My focus is in-person sessions for children aged 8-12 years. Your task is to provide me with exercises to perform with a child. Here are some info of the child I want you to create exercises for today:",
-  "childInfo": {
-    "gender": "",
-    "age": 0,
-    "skills": []
-  },
-  "exercise": {
-    "duration": 20,
-    "focusWords": [],
-    "description": "Create a recognition exercise where you provide a long list of 20 sentences emphasized on the focuswords. Ask the child to identify words containing those sounds. Sentences should be adapted to the therapist's background info. The exercise should take 20 minutes to perform. Make sure the exercise is long enough. The exercise should contain the whole script for me, the speech therapist. I should not have to make up any words for the exercise myself, during or before, the exercise. And remember, make 20 sentences. Your response should be on this form, in the exact order mentioned below: - Guide to the therapist where you explain the exercise that he/she is going to perform with the child (exercise duration) - The sentences in the exercise"
+    "backgroundInfo": "When you answer to this prompt, I want you to provide the exercise, and the exercise only. This is background info: I am a licensed speech therapist for children. My focus is in-person sessions for children aged 8-12 years. Your task is to provide me with exercises to perform with a child. Here are some info of the child I want you to create exercises for today:",
+    "childInfo": {
+      "gender": "",
+      "age": 0,
+      "skills": []
+    },
+    "exercise": {
+      "duration": 20,
+      "focusWords": [],
+      "description": "Create a recognition exercise where you provide a long list of 20 sentences emphasized on the focuswords. Ask the child to identify words containing those sounds. Sentences should be adapted to the therapist's background info. The exercise should take 20 minutes to perform. Make sure the exercise is long enough. The exercise should contain the whole script for me, the speech therapist. I should not have to make up any words for the exercise myself, during or before, the exercise. And remember, make 20 sentences. Your response should be on this form, in the exact order mentioned below: - Guide to the therapist where you explain the exercise that he/she is going to perform with the child (exercise duration) - The sentences in the exercise"
+    }
   }
-}
