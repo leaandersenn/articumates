@@ -24,7 +24,7 @@ export async function fetchPromptHistory({ userID }: UserProps) {
       const { role, content } = prompt;
       history.push({ role, content });
     });
-    //console.log(history);
+    //console.log("PromptHistory : " + JSON.stringify(history));
 
     return history;
   } catch (error) {

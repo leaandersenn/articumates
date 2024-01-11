@@ -32,7 +32,7 @@ export default async function Goal({ userID }: UserProps) {
             </div>
             );
         } else {
-            console.log("No user with the given ID found")
+            // console.log("No user with the given ID found")
         }
 
     } catch (error) {

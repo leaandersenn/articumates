@@ -7,18 +7,17 @@ const openai = new OpenAI({
 
 export async function makeRequest(earlierPrompts, prompt) {
   let history = earlierPrompts;
-  let promptWithHistory = prompt;
 
-  // Combine prompt with history
-  if (history.length > 0) {
-    history.forEach((entry) => {
-      promptWithHistory += `\n${entry.role}: ${entry.content}`;
-    });
-  }
-
+  // Add the latest prompt to the history first
   history.push({
     role: "user",
     content: prompt,
+  });
+
+  // Now construct the promptWithHistory string
+  let promptWithHistory = '';
+  history.forEach((entry) => {
+    promptWithHistory += `\n${entry.role}: ${entry.content}`;
   });
 
   const response = await openai.chat.completions.create({
@@ -30,7 +29,7 @@ export async function makeRequest(earlierPrompts, prompt) {
       },
     ],
     temperature: 1,
-    max_tokens: 1000,
+    max_tokens: 100,
     top_p: 1,
     frequency_penalty: 0,
     presence_penalty: 0,
@@ -42,6 +41,5 @@ export async function makeRequest(earlierPrompts, prompt) {
     content: response.choices[0].message.content,
   });
 
-  console.log(history);
   return history;
 }
