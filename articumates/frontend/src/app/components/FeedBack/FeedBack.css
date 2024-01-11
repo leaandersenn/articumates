@@ -1,0 +1,60 @@
+.FeedBackBoxes {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 1000px;
+    gap: 50px;
+}
+
+.performance {
+    background-color: #1F366F;
+}
+
+.performanceBody {
+    align-items: center;
+}
+
+.exercise {
+    background-color: #1F366F;
+}
+
+.exerciseBody {
+    align-items: center;
+}
+
+.satisfy {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.thumbsUp {
+    color: #07BE7D;
+    background-color: #BAFFE6;
+    border: #07BE7D;
+    border-radius: 50px;
+}
+
+.thumbsDown {
+    color: #DE2222;
+    background-color: #F0C0C0;
+    border-radius: 50px;
+
+}
+
+.smile {
+    color: #FFDB5B;
+    background-color: #FFF7DB;
+    border-radius: 50px;
+}
+
+.sad {
+    color: #5BA5FC;
+    background-color: #ACD2FF;
+    border-radius: 50px;
+}

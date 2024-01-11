@@ -16,7 +16,7 @@
 }
 
 .dateBox {
-    background-color: #FFFFFF;
+    background-color: rgba(255,255,250,0.4);
     color: #000000;
     border-radius: 10px;
     padding: 5px
@@ -24,6 +24,11 @@
 
 .title {
     margin-right: 10px;
+    font-weight: 400;
+}
+
+.duration {
+    font-weight: 600;
 }
 
 #date {

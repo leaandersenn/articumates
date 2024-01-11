@@ -22,33 +22,36 @@ export default function Session() {
     /* TODO: Push to the sessionexercises page */
   };
 
-  return (
-    <Card className="sessionCard">
-      <CardHeader className="sessionHeader">Create Session</CardHeader>
-      <CardBody className="sessionBody">
-        <div className="timeProfile">
-          <WhenBox />
-          <Card className="profileCard">
-            <ProfileInfo userID={Number(userID)} />
-          </Card>
-        </div>
-        <p className="exercisesText">Exercises</p>
+    const onHandleGenerate = () => {
+      router.push(`/session/${userID}/create`);
+    }
 
-        <div className="textGroup">
-          <p className="impairment">Impairment</p>
-          <p className="skillLevel">SkillLevel</p>
-          <p className="focus">Focus</p>
-        </div>
-        <ImpairmentSelector />
-        <div className="flex flex-row gap-y-4">
-          <Button className="cancelButton" onClick={onHandleCancel}>
-            Cancel
-          </Button>
-          <Button className="generateButton" onClick={onHandleGenerate}>
-            Generate Exercises
-          </Button>
-        </div>
-      </CardBody>
-    </Card>
-  );
+
+    return(
+        <Card className="sessionCard">
+          <CardHeader className="sessionHeader">
+            Create Session
+          </CardHeader>
+          <CardBody className="sessionBody">
+            <div className="timeProfile">
+                <WhenBox/>
+                <Card className="profileCard">
+                  <ProfileInfo userID={Number(userID)} />
+                </Card>
+            </div>
+            <p className="exercisesText">Exercises</p>
+
+            <div className="textGroup">
+              <p className="impairment">Impairment</p>
+              <p className="skill">SkillLevel</p>
+              <p className="focus">Focus</p>
+            </div>
+            <ImpairmentSelector />
+            <div className="flex flex-row gap-y-4">
+              <Button className="cancelButton" onClick={onHandleCancel}>Cancel</Button>
+              <Button className="generateButton"onClick={onHandleGenerate}>Generate Exercises</Button>
+            </div>
+          </CardBody>
+        </Card>
+    );
 }
