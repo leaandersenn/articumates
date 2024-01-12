@@ -9,7 +9,19 @@ const ChildInfoAge = 8;
 const ChildInfoSkills = ["'r' sound: 3/5", "'s' sound: 4/5"];
 const FocusWords = ["r", "s"];
 
-export async function CreateExercises() {
+interface ChildInfo {
+  ChildInfoGender: string;
+  ChildInfoAge: number;
+  ChildInfoSkills: string[];
+  FocusWords: string[];
+}
+
+export async function CreateExercises({
+  ChildInfoGender,
+  ChildInfoAge,
+  ChildInfoSkills,
+  FocusWords,
+}: ChildInfo) {
   try {
     const prompts = await modifyPrompts({
       ChildInfoGender,

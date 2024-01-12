@@ -7,20 +7,33 @@ import ProfileInfo from "@/app/components/ProfileInfo/ProfileInfo";
 import WhenBox from "@/app/components/WhenBox/page";
 import { Button, Card, CardBody, CardHeader } from "@nextui-org/react";
 import { useParams, useRouter } from "next/navigation";
-import { Fragment } from "react";
+import { Fragment, useState } from "react";
 import './session.css'
 import { CreateExercises } from "@/app/components/LLM/CreateExercises";
-
+import { ChosenImpairment } from "@/app/types";
+import { useSelector } from "react-redux";
+import { RootState } from "@reduxjs/toolkit/query";
 
 
 export default function Session() {
+  // Access chosenImpairments from Redux store
+  const chosenImpairments = useSelector((state: RootState) => state.userProfile.chosenImpairments);
+
+  // Update the childInfo object based on chosenImpairments
+  const childInfo = {
+    ChildInfoGender: "boy" as string, // You can update this based on your requirements
+    ChildInfoAge: 8 as number, // You can update this based on your requirements
+    ChildInfoSkills: chosenImpairments.map((impairment: { description: any; skillLevel: any; }) => `'${impairment.description}': ${impairment.skillLevel}/5`) as string[],
+    FocusWords: chosenImpairments.map((impairment: { description: any; }) => impairment.description) as string[],
+  };
 
     const params = useParams();
     const userID = params.id; 
     const router = useRouter();
 
     const onHandleCreateExercise = () => {
-      const test = CreateExercises();
+      console.log(childInfo.ChildInfoSkills);
+      //const test = CreateExercises(childInfo);
     }
 
     const onHandleCancel = () => {

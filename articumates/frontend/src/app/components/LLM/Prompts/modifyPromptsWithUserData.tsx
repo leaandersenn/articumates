@@ -45,7 +45,7 @@ function createPrompt(
   let duration =
     "Exercise info: Task duration: " + jsonData.exercise.duration + " minutes,";
   let focusWords =
-    " Focus the task on these words: " +
+    " Focus the task on these letters: " +
     jsonData.exercise.focusWords.join(", ") +
     ".";
   let description = " Description: " + jsonData.exercise.description;
