@@ -21,9 +21,21 @@ export default function Session() {
   const userID = params.id; 
   const router = useRouter();
 
+  // Access chosenImpairments from Redux store
+ const chosenImpairments = useSelector((state: RootState) => state.userProfile.chosenImpairments);
+
+ // Update the childInfo object based on chosenImpairments
+  const childInfo = {
+  ChildInfoGender: "boy" as string,
+  ChildInfoAge: 8 as number,
+  ChildInfoSkills: chosenImpairments.map((impairment) => `'${impairment.description}': ${impairment.skillLevel}/5`) as string[],
+  FocusWords: chosenImpairments.map((impairment) => impairment.description) as string[],
+  };
+
 
   const onHandleCreateExercise = () => {
-    const testPromise = CreateExercises();
+    const testPromise = CreateExercises(childInfo);
+    console.log(childInfo.ChildInfoSkills)
     testPromise.then((test) => {
     // You can access the 'test' variable here when it's resolved
     console.log(test);
