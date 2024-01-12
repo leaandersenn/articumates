@@ -20,7 +20,13 @@ export default function Session() {
     const router = useRouter();
 
     const onHandleCreateExercise = () => {
-      const test = CreateExercises();
+      const testPromise = CreateExercises();
+
+testPromise.then((test) => {
+  // You can access the 'test' variable here when it's resolved
+  console.log(test);
+});
+      
     }
 
     const onHandleCancel = () => {

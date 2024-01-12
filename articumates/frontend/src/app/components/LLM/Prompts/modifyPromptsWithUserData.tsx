@@ -66,7 +66,7 @@ export async function modifyPrompts(props: PromptProps) {
 
   prompts.push(createPrompt(recognitionOfWordsData, props));
   prompts.push(createPrompt(wordMimingData, props));
-  prompts.push("What was the last question I asked? Answer with max 15 words");
+  prompts.push(createPrompt(storyTellingData, props));
   // console.log(
   //   "prompt1: " +
   //     prompts[0] +

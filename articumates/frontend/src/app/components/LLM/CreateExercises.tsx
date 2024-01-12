@@ -27,7 +27,7 @@ export async function CreateExercises() {
 
       // Get the updated history from the LLM
       const updatedHistory = await makeRequest(promptHistory, prompt);
-      console.log("updatedHistory = :" + JSON.stringify(updatedHistory));
+      // console.log("updatedHistory = :" + JSON.stringify(updatedHistory));
 
       // Extract the latest response from the LLM
       const newString = updatedHistory[updatedHistory.length - 1].content;
@@ -36,11 +36,12 @@ export async function CreateExercises() {
       // Update the prompt history with the full conversation history
       promptHistory = updatedHistory;
   }
-  console.log(JSON.stringify(promptHistory));
-
-    return newResponses;
+  // console.log(JSON.stringify(promptHistory));
+  return newResponses;
+  
   } catch (error) {
     console.error("Error:", error);
     throw error; // Re-throw the error to be handled by the caller
   }
+  
 }
