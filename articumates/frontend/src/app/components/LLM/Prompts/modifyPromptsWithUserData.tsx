@@ -12,7 +12,7 @@ interface JSONData {
   };
   exercise: {
     duration: number;
-    focusWords: String[];
+
     description: String;
   };
 }
@@ -23,19 +23,18 @@ interface PromptProps {
   ChildInfoGender: String;
   ChildInfoAge: number;
   ChildInfoSkills: String[];
-  FocusWords: String[];
+
 }
 
 
 //Function for combining the child info with the prompts
 function createPrompt(
   jsonData: JSONData,
-  { ChildInfoGender, ChildInfoAge, ChildInfoSkills, FocusWords }: PromptProps
+  { ChildInfoGender, ChildInfoAge, ChildInfoSkills}: PromptProps
 ) {
   jsonData.childInfo.gender = ChildInfoGender;
   jsonData.childInfo.age = ChildInfoAge;
   jsonData.childInfo.skills = ChildInfoSkills;
-  jsonData.exercise.focusWords = FocusWords;
 
   let backgroundInfo = jsonData.backgroundInfo;
   let childInfoAge = " Age: " + jsonData.childInfo.age + " years.";
@@ -44,10 +43,6 @@ function createPrompt(
     " Skills: " + jsonData.childInfo.skills.join(", ") + ".";
   let duration =
     "Exercise info: Task duration: " + jsonData.exercise.duration + " minutes,";
-  let focusWords =
-    " Focus the task on these words: " +
-    jsonData.exercise.focusWords.join(", ") +
-    ".";
   let description = " Description: " + jsonData.exercise.description;
 
   return (
@@ -56,7 +51,6 @@ function createPrompt(
     childInfoGender +
     childInfoSkills +
     duration +
-    focusWords +
     description
   );
 }

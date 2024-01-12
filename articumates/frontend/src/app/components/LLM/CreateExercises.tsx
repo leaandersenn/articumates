@@ -7,27 +7,27 @@ import { update } from "firebase/database";
 const ChildInfoGender = "boy";
 const ChildInfoAge = 8;
 const ChildInfoSkills = ["'r' sound: 3/5", "'s' sound: 4/5"];
-const FocusWords = ["r", "s"];
+
 
 interface ChildInfo {
   ChildInfoGender: string;
   ChildInfoAge: number;
   ChildInfoSkills: string[];
-  FocusWords: string[];
+ 
 }
 
 export async function CreateExercises({
   ChildInfoGender,
   ChildInfoAge,
   ChildInfoSkills,
-  FocusWords,
+
 }: ChildInfo) {
   try {
     const prompts = await modifyPrompts({
       ChildInfoGender,
       ChildInfoAge,
       ChildInfoSkills,
-      FocusWords,
+
     });
 
     let promptHistory = await fetchPromptHistory({ userID: 1 });

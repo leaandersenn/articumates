@@ -29,7 +29,6 @@ export default function Session() {
   ChildInfoGender: "boy" as string,
   ChildInfoAge: 8 as number,
   ChildInfoSkills: chosenImpairments.map((impairment) => `'${impairment.description}': ${impairment.skillLevel}/5`) as string[],
-  FocusWords: chosenImpairments.map((impairment) => impairment.description) as string[],
   };
 
 

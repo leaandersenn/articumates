@@ -7,7 +7,7 @@
   },
   "exercise": {
     "duration": 40,
-    "focusWords": [],
+
     "description": "I want you to create an exercise where you provide 30 words that the therapist can mime for the child to guess, along with an explanation on how to mime them. The words should be adapted to the info mentioned earlier and have to be easy to mime. Make sure the exercise is long enough. I should not have to think of any words for the exercise. Remember to add an explanation on how to mime the words. Your response should be on this form, in the exact order mentioned below: - Guide to the therapist where you explain the exercise that he/she is going to perform with the child (exercise duration) - The words in the exercise"
   }
 }
