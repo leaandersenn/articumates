@@ -9,9 +9,8 @@ function ExerciseFull({ exercise }: any) {
     return (
         <Card className="fullExerciseCard">
             <CardBody className="exerciseCardBody">
-                <p className="exerciseTitle">{exercise.title}</p>
                 <p className="estimated">Estimated Time: 20 minutes</p>
-                <p className="description">{exercise.description}</p>
+                <pre className="formatting">{exercise}</pre>
             </CardBody>
             <CardFooter>
                 <FeedBack />

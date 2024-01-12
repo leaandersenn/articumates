@@ -30,3 +30,8 @@
 .estimatedTime {
     font-style: italic;
 }
+
+.test {
+    white-space: pre-wrap;
+    overflow-wrap: break-word;
+}

@@ -30,3 +30,8 @@
 .description {
     font-size: 14px;
 }
+
+.formatting {
+    white-space: pre-wrap;
+    overflow-wrap: break-word;
+}

@@ -17,7 +17,6 @@ export default function ExerciseCard({exercise, number}: any) {
     
     return(
 
-        /* TODO: Remove div, just width did not respond when card is button */
         <div className="cardStyling">
         <Card 
             className="cardExercise"   
@@ -29,7 +28,7 @@ export default function ExerciseCard({exercise, number}: any) {
                 <FontAwesomeIcon icon={faUpRightAndDownLeftFromCenter} />
             </CardHeader>
             <CardBody className="exerciseCardText">
-                <p>{exercise.title}</p>
+                <pre className="test">{exercise[number]}</pre>
                 <p className="estimatedTime">Estimated Time: 20 minutes</p>
             </CardBody>
         </Card>

@@ -29,7 +29,7 @@ export async function makeRequest(earlierPrompts, prompt) {
       },
     ],
     temperature: 1,
-    max_tokens: 10,
+    max_tokens: 1000,
     top_p: 1,
     frequency_penalty: 0,
     presence_penalty: 0,
