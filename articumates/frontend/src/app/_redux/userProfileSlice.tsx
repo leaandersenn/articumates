@@ -77,16 +77,16 @@ export const userProfileSlice = createSlice({
             (impairment) => impairment.description !== action.payload
         );
     },
-    updateChosenImpairmentFocus: (state, action: PayloadAction<{ description: string; focus: ChosenImpairment['focus'] }>) => {
-        const { description, focus } = action.payload;
-        const impairment = state.chosenImpairments.find((imp) => imp.description === description);
-        if (impairment) {
-            impairment.focus = focus;
-        }
-    },
+    // updateChosenImpairmentFocus: (state, action: PayloadAction<{ description: string; focus: ChosenImpairment['focus'] }>) => {
+    //     const { description, focus } = action.payload;
+    //     const impairment = state.chosenImpairments.find((imp) => imp.description === description);
+    //     if (impairment) {
+    //         impairment.focus = focus;
+    //     }
+    // },
   },
 });
 
-export const { updateProfile, updateId, updateName, updateAge, updateGoals, addChosenImpairment, addImpairment, addGoal, updateChosenImpairmentFocus, updateImpairments, removeChosenImpairment, updateChosenImpairments} = userProfileSlice.actions;
+export const { updateProfile, updateId, updateName, updateAge, updateGoals, addChosenImpairment, addImpairment, addGoal, updateImpairments, removeChosenImpairment, updateChosenImpairments} = userProfileSlice.actions;
 
 export default userProfileSlice.reducer;

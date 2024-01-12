@@ -67,7 +67,7 @@ export default function Session() {
             <div className="textGroup">
               <p className="impairment">Impairment</p>
               <p className="skill">SkillLevel</p>
-              <p className="focus">Focus</p>
+              {/* <p className="focus">Focus</p> */}
             </div>
             <ImpairmentSelector />
             <div className="flex flex-row gap-y-4">

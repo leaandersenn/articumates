@@ -7,7 +7,6 @@ import { Impairment, ChosenImpairment } from '@/app/types';
 import {
   addChosenImpairment,
   removeChosenImpairment,
-  updateChosenImpairmentFocus,
 } from '../../_redux/userProfileSlice';
 import { Checkbox } from '@nextui-org/react';
 import '../ImpairmentSelector/ImpairmentSelector.css'
@@ -24,15 +23,14 @@ const ImpairmentSelector: React.FC = () => {
     } else {
       const chosenImpairment: ChosenImpairment = {
         ...impairment,
-        focus: 'No focus', // Default focus level
       };
       dispatch(addChosenImpairment(chosenImpairment));
     }
   };
 
-  const handleFocusChange = (description: string, focus: ChosenImpairment['focus']) => {
-    dispatch(updateChosenImpairmentFocus({ description, focus }));
-  };
+  // const handleFocusChange = (description: string, focus: ChosenImpairment['focus']) => {
+  //   dispatch(updateChosenImpairmentFocus({ description, focus }));
+  // };
 
   const renderSkillLevel = (skillLevel: number) => {
     return [...Array(5)].map((_, index) => (
@@ -52,7 +50,7 @@ const ImpairmentSelector: React.FC = () => {
           />
           <span className="impairmentDescription">{impairment.description}</span>
           <div className="skillLevel">{renderSkillLevel(impairment.skillLevel)}</div>
-          <select
+          {/* <select
             className="select"
             value={
               chosenImpairments.find((chosen) => chosen.description === impairment.description)?.focus || 'No focus'
@@ -63,7 +61,7 @@ const ImpairmentSelector: React.FC = () => {
             <option value="Medium">Medium</option>
             <option value="Low">Low</option>
             <option value="No focus">No focus</option>
-          </select>
+          </select> */}
         </div>
       ))}
     </div>
