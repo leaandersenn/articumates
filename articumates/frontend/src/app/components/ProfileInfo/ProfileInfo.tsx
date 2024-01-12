@@ -27,7 +27,7 @@ export default function ProfileInfo({userID}: UserProps) {
                     const userDoc = querySnapshot.docs[0];
                     const userData = userDoc.data();
                     console.log(userData)
-                    dispatch(updateName(userData.Name))
+                    dispatch(updateName(userData.name))
                     dispatch(updateAge(userData.age))
         
             } else {
@@ -45,6 +45,7 @@ export default function ProfileInfo({userID}: UserProps) {
     }, [userID, dispatch]);
 
     const profileInfo = useSelector((state: RootState) => state.userProfile)
+    console.log(profileInfo);
 
     return(
         <div className="userComponent">

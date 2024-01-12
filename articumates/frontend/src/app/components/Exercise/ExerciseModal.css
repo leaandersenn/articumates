@@ -1,5 +1,6 @@
 .exerciseModal {
     background-color: #1F366F;
+    width: 1500px;
 }
 
 .exerciseText {
@@ -32,5 +33,10 @@
     background-color:#93C9EF;
     color: #0094FF;
     border-radius: 50px;
+}
+
+.textFormatting {
+    white-space: pre-wrap;
+    overflow-wrap: break-word;
 }
 

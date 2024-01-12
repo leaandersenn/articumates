@@ -16,6 +16,7 @@ interface ExerciseModalProps {
   onOpen: () => void;
   isOpen: boolean;
   onClose: () => void;
+  exercise: string;
 }
 
 export default function ExerciseModal(props: ExerciseModalProps) {
@@ -30,15 +31,11 @@ export default function ExerciseModal(props: ExerciseModalProps) {
         <ModalContent>
           {(onClose) => (
             <>
-              <ModalHeader className="flex flex-col gap-1">
-                <p className="exerciseText">The Daring Adventure of Captain Sam and the Lost Treasure</p>
-                <p className="time">Estimated time: 20 minutes</p>
-              </ModalHeader>
               <ModalBody>
-              This exercise aims to help the child improve his speech sounds, specifically the s, r and l sounds. The therapist will guide the child through reading an exciting story out loud, focusing on correct pronunciation and articulation. The goal is to make the exercise engaging and enjoyable while addressing the speech difficulties.
+                <p className="textFormatting">{props.exercise}</p>
                </ModalBody>
               <ModalFooter className="generateGroup">
-                <p className="generate">Regenerate Exercise</p>
+                <pre className="generate">Regenerate Exercise</pre>
                 <Button
                   isIconOnly
                   onClick={onHandleRegenerate}

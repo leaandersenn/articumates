@@ -71,7 +71,7 @@ export default function FeedBack() {
             </Card>
             <Card className="exercise">
                <CardBody className="exerciseBody">
-                    <p>How was the exercise?</p>
+                    <p>How was the exercises?</p>
                   <div className="satisfy">
                     <Button
                         isIconOnly

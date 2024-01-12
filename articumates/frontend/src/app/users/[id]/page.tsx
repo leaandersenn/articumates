@@ -8,7 +8,7 @@ import { Suspense, useEffect } from "react";
 import ProfileInfo from "@/app/components/ProfileInfo/ProfileInfo";
 import Impairments from "@/app/components/Impairments/Impairments";
 import { useDispatch } from "react-redux";
-import { updateId } from "@/app/_redux/userProfileSlice";
+import { updateAge, updateId } from "@/app/_redux/userProfileSlice";
 
 
 export default function Users() {

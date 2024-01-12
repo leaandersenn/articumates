@@ -76,7 +76,7 @@ export default function Session() {
             <ImpairmentSelector />
             <div className="flex flex-row gap-y-4">
               <Button className="cancelButton" onClick={onHandleCancel}>Cancel</Button>
-              <Button className="cancelButton" onClick={onHandleCreateExercise}>Generate Exercise</Button>
+              <Button className="generateButton" onClick={onHandleCreateExercise}>Generate Exercises</Button>
             </div>
           </CardBody>
         </Card>

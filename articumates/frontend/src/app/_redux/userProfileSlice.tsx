@@ -16,7 +16,7 @@ type UserProfileState = {
 //Initial state
 const initialState: UserProfileState = {
   id: 1,
-  name: '',
+  name: 'The Halvorsen',
   age: 8,
   goals: [
   ],
