@@ -48,8 +48,8 @@ export async function CreateExercises({
       // Update the prompt history with the full conversation history
       promptHistory = updatedHistory;
   }
-  console.log(JSON.stringify(promptHistory));
-
+    //console.log(JSON.stringify(promptHistory));
+    console.log(newResponses);
     return newResponses;
   } catch (error) {
     console.error("Error:", error);

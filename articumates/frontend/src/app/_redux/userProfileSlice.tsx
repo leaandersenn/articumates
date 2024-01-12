@@ -28,7 +28,7 @@ const initialState: UserProfileState = {
     { description: 'Stutter', skillLevel: 3 },
     { description: 'Other sounds ("r", "l", "th"...)', skillLevel: 1 }
   ],
-  chosenImpairments: [{description: "'r' sound", focus: "Medium" }],
+  chosenImpairments: [{skillLevel: "3", description: "'r' sound", focus: "Medium" }],
 
   exercises: [
     {title: "hh", description: "hsia", ingress: "asdad"},

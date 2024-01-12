@@ -12,20 +12,23 @@ import './session.css'
 import { CreateExercises } from "@/app/components/LLM/CreateExercises";
 import { ChosenImpairment } from "@/app/types";
 import { useSelector } from "react-redux";
-import { RootState } from "@reduxjs/toolkit/query";
+import { RootState } from "@/app/_redux/store";
 
 
 export default function Session() {
   // Access chosenImpairments from Redux store
-  const chosenImpairments = useSelector((state: RootState) => state.userProfile.chosenImpairments);
 
-  // Update the childInfo object based on chosenImpairments
-  const childInfo = {
-    ChildInfoGender: "boy" as string, // You can update this based on your requirements
-    ChildInfoAge: 8 as number, // You can update this based on your requirements
-    ChildInfoSkills: chosenImpairments.map((impairment: { description: any; skillLevel: any; }) => `'${impairment.description}': ${impairment.skillLevel}/5`) as string[],
-    FocusWords: chosenImpairments.map((impairment: { description: any; }) => impairment.description) as string[],
-  };
+
+  // Access chosenImpairments from Redux store
+ const chosenImpairments = useSelector((state: RootState) => state.userProfile.chosenImpairments);
+
+ // Update the childInfo object based on chosenImpairments
+ const childInfo = {
+ChildInfoGender: "boy" as string,
+ChildInfoAge: 8 as number,
+ChildInfoSkills: chosenImpairments.map((impairment) => `'${impairment.description}': ${impairment.skillLevel}/5`) as string[],
+FocusWords: chosenImpairments.map((impairment) => impairment.description) as string[],
+};
 
     const params = useParams();
     const userID = params.id; 
