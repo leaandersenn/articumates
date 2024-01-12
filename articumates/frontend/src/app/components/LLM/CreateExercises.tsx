@@ -4,9 +4,6 @@ import { fetchPromptHistory } from "./FetchPromptHistory";
 import { modifyPrompts } from "./Prompts/modifyPromptsWithUserData";
 import { update } from "firebase/database";
 
-const ChildInfoGender = "boy";
-const ChildInfoAge = 8;
-const ChildInfoSkills = ["'r' sound: 3/5", "'s' sound: 4/5"];
 
 
 interface ChildInfo {
