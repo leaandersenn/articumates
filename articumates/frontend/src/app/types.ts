@@ -1,4 +1,5 @@
 export type ChosenImpairment = {
+    skillLevel: any;
     description: string;
     focus: 'High' | 'Medium' | 'Low' | 'No focus';
   };

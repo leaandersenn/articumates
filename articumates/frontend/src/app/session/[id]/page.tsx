@@ -10,32 +10,33 @@ import { useParams, useRouter } from "next/navigation";
 import { Fragment } from "react";
 import './session.css'
 import { CreateExercises } from "@/app/components/LLM/CreateExercises";
+import { useSelector } from "react-redux";
+import { RootState } from "@/app/_redux/store";
 
-
+ 
 
 export default function Session() {
 
-    const params = useParams();
-    const userID = params.id; 
-    const router = useRouter();
+  const params = useParams();
+  const userID = params.id; 
+  const router = useRouter();
 
-    const onHandleCreateExercise = () => {
-      const testPromise = CreateExercises();
 
-testPromise.then((test) => {
-  // You can access the 'test' variable here when it's resolved
-  console.log(test);
-});
-      
-    }
+  const onHandleCreateExercise = () => {
+    const testPromise = CreateExercises();
+    testPromise.then((test) => {
+    // You can access the 'test' variable here when it's resolved
+    console.log(test);
+    });
+  }
 
-    const onHandleCancel = () => {
-      router.push(`/users/${userID}`);
-    }
+  const onHandleCancel = () => {
+    router.push(`/users/${userID}`);
+  }
 
-    const onHandleGenerate = () => {
-      router.push(`/session/${userID}/create`);
-    }
+  const onHandleGenerate = () => {
+    router.push(`/session/${userID}/create`);
+  }
 
 
     return(
