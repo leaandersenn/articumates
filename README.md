@@ -20,6 +20,9 @@ The project is a website created for tailored and efficient speech therapy. The 
 # Navigate to the /frontend folder.
 cd articumates/frontend
 
+# Install dependencies
+npm install
+
 # Start the application locally 
 npm run dev
 ```
