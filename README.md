@@ -2,14 +2,12 @@
 
 Project for the course _advanced user interfaces_ at Politecnico di Milano.
 
-### Developmer information
+### 🖥 Developmer information
 
 Developed by Victoria Kallerud, Lea Jahren-Andersen, Karen Seim Midtlien and Eivind Midtbø Øyulvstad
 
 
-### Project Description
-
-👩🏼‍⚕️👨🏼‍⚕️
+### 👩🏼‍⚕️👨🏼‍⚕️ Project Description
 
 The project is a website created for tailored and efficient speech therapy. The website is to be used by speech therapists when planning and creating sessions for children in the age 8-12. The site creates exercises tailored to the spesific child, which will help them reach their goals.
 
